@@ -1,7 +1,7 @@
 {
-  "name": "slicks-slices-frontend",
+  "name": "kwarctex-website",
   "private": true,
-  "description": "Slick Serves the Sweetest Slices",
+  "description": "Kwarctex is a distributor of quartz conglomerate",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "wesbos"
+      "danleks"
     ],
     "rules": {
       "react/prop-types": 0
@@ -57,6 +57,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wesbos/slicks-slices"
+    "url": "https://github.com/kwarctex/kwarctex-website-2.0"
   }
 }
