@@ -1,44 +1,36 @@
 import React from 'react'
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Logo from '../assets/images/logo.svg';
+import { MENU__ITEMS } from '../utils/MenuItems';
 
 const NavStyles = styled.nav`
-
-    padding: 2.5rem 7rem;
-
+    width: 59%;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, -50%); */
+    justify-self: flex-start;
     ul {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
-
-        margin: 0;
-        padding: 0;
-
-        text-align: center;
         list-style: none;
     }
-
     li {
-        :first-child {
-            text-align: left;
-        }
-
-        :last-child {
-            text-align: right;
-        }
+        margin-bottom: 1.5rem;
     }
-
     a {
+        font-size: 3rem;
+        font-size: clamp(2.5rem, 2.5vw, 3.5rem);
+        color: var(--white);
         text-decoration: none;
         font-weight: 600;
-        &:hover {
-            color: red;
+        text-transform: capitalize;
+        &[aria-current="page"] {
+            font-size: 5rem;
+            font-size: clamp(3rem, 4vw, 5rem);
+            background-color: var(--grey);
+            color: var(--black);
+            padding: 6px;
+            text-transform: uppercase;
         }
-    }
-
-    svg {
-        width: 5rem;
-        transform: translateY(-5rem);
     }
 `;
 
@@ -46,21 +38,7 @@ const Nav = () => {
     return (
         <NavStyles>
             <ul>
-                <li>
-                    <Link to='/'><Logo /></Link>
-                </li>
-                <li>
-                    <Link to='/o-nas'>O nas</Link>
-                </li>
-                <li>
-                    <Link to='/produkty'>Konglomeraty</Link>
-                </li>
-                <li>
-                    <Link to='/realizacje'>Realizacje</Link>
-                </li>
-                <li>
-                    <Link to='/kontakt'>Kontakt</Link>
-                </li>
+                {MENU__ITEMS.map(item => <li><Link to={item.link}>{ item.name }</Link></li>)}
             </ul>  
         </NavStyles>
     )

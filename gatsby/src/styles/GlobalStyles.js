@@ -2,9 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --black: #2B2B2B;
+    --black: #0E0E0E;
     --white: #fff;
-    --grey: #6F6F6F;
+    --grey: #F4F4F4;
+    --red: #FF6464;
+    --darkGrey: #868686;
   }
   html {
     box-sizing: border-box;
@@ -43,6 +45,15 @@ const GlobalStyles = createGlobalStyle`
   .gatsby-image-wrapper img[src*=base64\\,] {
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   /* Scrollbar Styles */
